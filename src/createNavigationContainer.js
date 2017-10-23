@@ -69,7 +69,8 @@ export default function createNavigationContainer<S: *, O>(
         return;
       }
 
-      const { navigation, screenProps, ...containerProps } = props;
+      //update by sin,add router varible;
+      const { navigation, screenProps,router, ...containerProps } = props;
 
       const keys = Object.keys(containerProps);
 
@@ -195,7 +196,8 @@ export default function createNavigationContainer<S: *, O>(
         }
         navigation = this._navigation;
       }
-      return <Component {...this.props} navigation={navigation} />;
+      //update by sin,add router properties;
+      return <Component {...this.props} navigation={navigation} router={Component.router} />;
     }
   }
 
