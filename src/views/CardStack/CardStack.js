@@ -393,9 +393,10 @@ class CardStack extends Component {
     scene: NavigationScene
   ): React.Element<any> {
     const { navigation } = this._getScreenDetails(scene);
-    const { screenProps } = this.props;
+    const { screenProps,router } = this.props;
     const headerMode = this._getHeaderMode();
     if (headerMode === 'screen') {
+      //update by sin,this SceneView add router propertie.
       return (
         <View style={styles.container}>
           <View style={{ flex: 1 }}>
@@ -403,17 +404,20 @@ class CardStack extends Component {
               screenProps={screenProps}
               navigation={navigation}
               component={SceneComponent}
+              router={router}
             />
           </View>
           {this._renderHeader(scene, headerMode)}
         </View>
       );
     }
+    //update by sin,this SceneView add router propertie.
     return (
       <SceneView
         screenProps={this.props.screenProps}
         navigation={navigation}
         component={SceneComponent}
+        router={router}
       />
     );
   }
