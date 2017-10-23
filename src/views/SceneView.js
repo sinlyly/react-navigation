@@ -30,8 +30,9 @@ export default class SceneView<O> extends PureComponent<void, Props<O>, void> {
   }
 
   render() {
-    const { screenProps, navigation, component: Component } = this.props;
+    //update by sin,add router properties;
+    const { screenProps, navigation, component: Component,router } = this.props;
 
-    return <Component screenProps={screenProps} navigation={navigation} />;
+    return <Component screenProps={screenProps} navigation={navigation} router={router} />;
   }
 }
